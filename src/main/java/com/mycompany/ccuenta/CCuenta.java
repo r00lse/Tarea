@@ -7,8 +7,9 @@ package com.mycompany.ccuenta;
 import java.util.List;
 
 /**
- *
- * @author ED05
+ * Esta es la clase ccuenta que representa una abstracción de una cuenta
+ * realiza varias operaciones sobre la cuenta
+ * @author F javier mendez
  */
 public class CCuenta {
 
@@ -21,10 +22,23 @@ public class CCuenta {
 
 
     /* Constructor sin argumentos */
+
+    /**
+     *Constructor sin argumentos vacio
+     */
+
     public CCuenta() {
     }
 
     // Constructor con parámetro para iniciar todas las propiedades de la clase
+
+    /**
+     *    Constructor con parámetro para iniciar todas las propiedades de la clase
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo
+     */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         nombre = nom;
         cuenta = cue;
@@ -32,16 +46,30 @@ public class CCuenta {
     }
     // Método para asignar el nombre del titular de la cuenta
 
+    /**
+     * Método para asignar el nombre del titular de la cuenta
+     * @param nom
+     */
     public void setNombre(String nom) {
         nombre = nom;
     }
 
     // Método que me devuelve el nombre del titular
+
+    /**
+     * Método que me devuelve el nombre del titular
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
     // Método que me devuelve el saldo disponible en cada momento
+
+    /**
+     * Método que me devuelve el saldo disponible en cada momento
+     * @return
+     */
     public double getEstado() {
         return saldo;
     }
@@ -50,7 +78,8 @@ public class CCuenta {
      * Este método va a ser probado con Junit
      */
     /**
-     * 
+     * Método para ingresar cantidades en la cuenta. Modifica el saldo.
+     * Este método va a ser probado con Junit
      * @param cantidad
      * @throws Exception 
      */
@@ -65,6 +94,14 @@ public class CCuenta {
     /* Método para retirar cantidades en la cuenta. Modifica el saldo.
      * Este método va a ser probado con Junit
      */
+
+    /**
+     *Método para retirar cantidades en la cuenta. Modifica el saldo.
+     * Este método va a ser probado con Junit
+     * @param cantidad
+     * @throws Exception
+     */
+
     public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0) {
             throw new Exception("No se puede retirar una cantidad negativa");
@@ -76,10 +113,21 @@ public class CCuenta {
     }
 
     // Método que me devuelve el número de cuenta
+
+    /**
+     * Método que me devuelve el número de cuenta
+     * @return
+     */
     public String getCuenta() {
         return cuenta;
     }
 
+    /**
+     * Método que me devuelve el cobro de la factura
+     * recibe dos parámetros
+     * @param tipo
+     * @param cantidad
+     */
     public void cobroFactura(String tipo,double cantidad){
         switch(tipo){
         
